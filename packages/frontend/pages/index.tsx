@@ -2,6 +2,8 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import styles from '../styles/Home.module.css'
 
+const roomURl = String(process.env.NEXT_PUBLIC_WEBSOCKET_URL)
+
 export default function Home() {
   const [message, setMessage] = useState('')
 
@@ -10,7 +12,7 @@ export default function Home() {
     let socket: undefined | WebSocket = undefined
 
     if(WebSocket) {
-      socket = new WebSocket(String(process.env.NEXT_PUBLIC_WEBSOCKET_URL))
+      socket = new WebSocket(`${roomURl}?roomId=example`)
 
       socket.onopen = function(event: Event) {
         console.info('Socket opened')
