@@ -28,10 +28,12 @@ describe("room", () => {
       );
 
       // Assert
-      expect(room).toEqual(expect.objectContaining({
-        id: "secret-id",
-        members: expect.arrayContaining(["connection-id", "author"]),
-      }););
+      expect(room).toEqual(
+        expect.objectContaining({
+          id: "secret-id",
+          members: expect.arrayContaining(["connection-id", "author"]),
+        })
+      );
     });
 
     it.todo("user can rejoin the room");
