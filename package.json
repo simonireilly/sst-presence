@@ -1,0 +1,26 @@
+{
+  "name": "dynamodb-websockets",
+  "version": "1.0.0",
+  "description": "Yarn workspaces presence example",
+  "private": true,
+  "scripts": {
+    "dev": "lerna run --stream dev"
+  },
+  "keywords": [
+    "react",
+    "websockets",
+    "presence"
+  ],
+  "author": "Simon Reilly",
+  "workspaces": {
+    "packages": [
+      "packages/"
+    ],
+    "nohoist": [
+      "**/*"
+    ]
+  },
+  "dependencies": {
+    "lerna": "^4.0.0"
+  }
+}
