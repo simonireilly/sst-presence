@@ -1,6 +1,5 @@
 import * as sst from "@serverless-stack/resources";
 import * as cdk from '@aws-cdk/core'
-import * as path from "path"
 
 export default class MyStack extends sst.Stack {
   constructor(scope: sst.App, id: string, props?: sst.StackProps) {
@@ -36,18 +35,9 @@ export default class MyStack extends sst.Stack {
     // Allow the API to access the table
     api.attachPermissions([table]);
 
-    // const site = new sst.StaticSite(this, "ReactSite", {
-    //   path: path.join(__dirname, "..", "..", "..", "frontend"),
-    //   buildOutput: "out",
-    //   buildCommand: "yarn export",
-    //   errorPage: "404.html",
-    //   indexPage: "index.html",
-    // });
-
     // Show the endpoint in the output
     this.addOutputs({
       "ApiEndpoint": api.url,
-      // "Frontend": site.url
     });
   }
 }

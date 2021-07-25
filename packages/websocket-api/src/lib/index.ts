@@ -4,7 +4,6 @@ export const dynamoDb = new AWS.DynamoDB.DocumentClient();
 export const ApiGatewayManagementApi = AWS.ApiGatewayManagementApi
 
 export const connect = async (connectionId: string) => {
-
   const params = {
     TableName: String(process.env.tableName),
     Item: {
