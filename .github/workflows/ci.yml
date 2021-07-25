@@ -16,7 +16,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: packages/{{matrix.package}}
+        working-directory: packages/${{ matrix.package }}
 
     steps:
       - uses: actions/checkout@v2
